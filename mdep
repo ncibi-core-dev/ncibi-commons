@@ -1,0 +1,4 @@
+#!/bin/sh
+mvn -Dmaven.test.skip=true clean
+mvn -Dmaven.test.skip=true package
+mvn deploy:deploy-file -DgroupId=org.ncibi.commons -DartifactId=ncibi-commons -Dversion=1.0 -Dfile=target/ncibi-commons-1.0.jar -Dpackaging=jar -DpomFile=pom.xml -DrepositoryId=developer2.ncibi.org -Durl=scp://developer2.ncibi.org/var/www/html/maven
